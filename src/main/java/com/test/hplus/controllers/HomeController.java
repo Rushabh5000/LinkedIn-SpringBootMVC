@@ -10,9 +10,10 @@ import java.util.List;
 
 @Controller
 public class HomeController {
+
     @GetMapping("/home")
     public String goHome(){
-        System.out.println("in Home Controller");
+        System.out.println("in home controller");
         return "index";
     }
 
@@ -22,16 +23,16 @@ public class HomeController {
         return "search";
     }
 
-    @GetMapping("/goToRegistration")
-    public String goToRegistration(){
-        System.out.println("going to register page");
-        return "register";
-    }
-
     @GetMapping("/goToLogin")
     public String goToLogin(){
         System.out.println("going to login page");
         return "login";
+    }
+
+    @GetMapping("/goToRegistration")
+    public String goToRegistration(){
+        System.out.println("going to register page");
+        return "register";
     }
 
     @ModelAttribute("newuser")
@@ -41,6 +42,7 @@ public class HomeController {
 
     @ModelAttribute("genderItems")
     public List<String> getGenderItems(){
-        return Arrays.asList(new String[] {"Male", "Female", "Other"});
+        return Arrays.asList(new String[]{"Male", "Female", "Other"});
     }
-}
+
+ }
